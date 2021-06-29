@@ -18,8 +18,8 @@ export const Home = () => {
 
   const filteredPosts = searchValue
     ? allPosts.filter((post) => {
-        return post.title.toLowerCase().includes(searchValue.toLowerCase());
-      })
+      return post.title.toLowerCase().includes(searchValue.toLowerCase());
+    })
     : posts;
 
   const handleLoadPosts = useCallback(async (page, postsPerPage) => {
@@ -30,7 +30,7 @@ export const Home = () => {
   }, []);
 
   useEffect(() => {
-    console.log(new Date().toLocaleString('pt-br'));
+    // console.log(new Date().toLocaleString('pt-br'));
     handleLoadPosts(0, postsPerPage);
   }, [handleLoadPosts, postsPerPage]);
 
